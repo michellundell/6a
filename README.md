@@ -308,7 +308,7 @@ Which methods should the FlightManager have ... hmm
 ```
 class FlightManager {
 	public:
-	    bool initFromFile(const char *filename) ?
+	    bool initFromFile(const char *filename)
 	    Flight *getFirst();
 	    Flight *getNext();
 	    bool hasMore(); // bool is a type that can be true or false
