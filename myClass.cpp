@@ -22,14 +22,14 @@ class myClass {
 int main(int argc,char **argv)
 {
         myClass me;
-		string name;
-		int age;
+	string name;
+	int age;
         cout << "What is my name?" << endl;
         cin >> name;
         cout << "What is my age?" << endl;
         cin >> age;
 
-		me.setInfo(name, age);
+	me.setInfo(name, age);
 
         me.showInfo();
 
