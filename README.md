@@ -8,6 +8,9 @@
 5. C++ input/output
 6. C++ Class example
 7. C++ Class Access
+8. C++ files ...
+9. C++ Writing a text file
+10. C++ Reading a text file
 
 
 ## 1. Status of C version of the Ticket system
@@ -291,10 +294,93 @@ example.cpp:6:10: note: implicitly declared private here
 make: *** [example] Error 1
 ```
 
+## 8. C++ files ...
+
+In order to open a file with a stream object we use its member function open:
+
+**open (filename, mode);**
+
+Where filename is a string representing the name of the file to be opened, and mode is an optional parameter with a combination of the following flags:
+```
+ios::in	        Open for input operations.
+ios::out	Open for output operations.
+ios::binary	Open in binary mode.
+ios::ate	Set the initial position at the end of the file.
+                If this flag is not set, the initial position is the beginning of the file.
+ios::app	All output operations are performed at the end of the file, appending the content to the current content of the file.
+ios::trunc	If the file is opened for output operations and it already existed, its previous content is deleted and replaced by the new one.
+```
+
+All these flags can be combined using the bitwise operator OR (|). For example, if we want to open the file example.bin in binary mode to add data we could do it by the following call to member function open:
+
+```
+ofstream myfile;
+myfile.open ("example.bin", ios::out | ios::app | ios::binary);
+```
+
+Each of the open member functions of classes ofstream, ifstream and fstream has a default mode that is used if the file is opened without a second argument:
+
+```
+class	        default mode parameter
+-----           ......................
+ofstream	ios::out
+ifstream	ios::in
+fstream	        ios::in | ios::out
+```
+
+
+## 9. C++ Writing a text file
+```
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main () {
+  ofstream myfile ("example.txt");
+  if (myfile.is_open())
+  {
+    myfile << "This is a line.\n";
+    myfile << "This is another line.\n";
+    myfile.close();
+  }
+  else cout << "Unable to open file";
+  return 0;
+}
+```
+
+## 10. C++ Reading a text file
+```
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main () {
+  string line;
+  ifstream myfile ("example.txt");
+  if (myfile.is_open())
+  {
+    while ( getline (myfile,line) )
+    {
+      cout << line << '\n';
+    }
+    myfile.close();
+  }
+
+  else cout << "Unable to open file"; 
+
+  return 0;
+}
+```
+
+
+
 ## Todays assignment
 
 1. If the variables in the myClass is not public, how can they be set if they are only accessible from the class itself?
    Find the solution, correct it and make a pull-request so I can run my program!
+
+   The file is called myClass.cpp and is found in the michellundell/6a repo.
 
 2. If you are finished with the ticket program in C, start making a C++ version of it! (you could start by copying ticket.c to ticket.cpp).
 
