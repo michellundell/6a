@@ -293,9 +293,9 @@ make: *** [example] Error 1
 
 ## Todays assignment
 
-1 If the variables in the myClass is not public, how can they be set if they are only accessible from the class itself?
+1. If the variables in the myClass is not public, how can they be set if they are only accessible from the class itself?
 
-2 If you are finished with the ticket program in C, start making a C++ version of it! (you could start by copying ticket.c to ticket.cpp).
+2. If you are finished with the ticket program in C, start making a C++ version of it! (you could start by copying ticket.c to ticket.cpp).
 
 Think about how the data and functions could be grouped together, maybe as a class?
 
@@ -311,7 +311,6 @@ Which methods should the FlightManager have ... hmm
 
 I see I need something that holds the information about one flight ... perhaps a class called Flight?
 
-etc ...
-
+and so on ....
 
 
