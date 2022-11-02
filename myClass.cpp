@@ -1,28 +1,35 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
 
-class myClass {
-            char name[25];
-            int age;
-        public:
+class myClass
+{
+    string name;
+    int age;
 
-            void showInfo()
-            {
-                cout << "Hi my name is " << this->name << " and Im " << this->age << " old." << endl;
-            }
-
+public:
+    void getInfo()
+    {
+        cout << "What is your name? ";
+        getline(cin, this->name);
+        cout << "What is your age? ";
+        cin >> this->age;
+    }
+    
+    void showInfo()
+    {
+        cout << "Hi, my name is " << this->name << " and I'm " << this->age << " old." << endl;
+    }
 };
 
-int main(int argc,char **argv)
+int main(int argc, char **argv)
 {
-        myClass me;
+    myClass me;
 
-        cout << "What is my name?" << endl;
-        cin >> me.name;
-        cout << "What is my age?" << endl;
-        cin >> me.age;
+    me.getInfo();
 
-        me.showInfo();
+    me.showInfo();
 
-        return 0;
+    return 0;
 }
