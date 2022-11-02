@@ -358,7 +358,7 @@ using namespace std;
 int main (int argc, char **argv) 
 {
   string line;
-  ifstream myfile ("example.txt");
+  ifstream myfile("example.txt");
   if (myfile.is_open())
   {
     while ( getline (myfile,line) )
@@ -367,7 +367,6 @@ int main (int argc, char **argv)
     }
     myfile.close();
   } else cerr << "Unable to open file" << endl; 
-
   return 0;
 }
 ```
