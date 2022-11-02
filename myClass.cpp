@@ -19,7 +19,7 @@ public:
     
     void showInfo()
     {
-        cout << "Hi, my name is " << this->name << " and I'm " << this->age << " old." << endl;
+        cout << "Hi, my name is " << this->name << " and I'm " << this->age << " years old." << endl;
     }
 };
 
