@@ -305,12 +305,20 @@ I myself would probably think like this:
 hmm I need something that holds the information about the flights ... maybe a class called FlightManager?
 
 Which methods should the FlightManager have ... hmm 
-	bool initFromFile(const char *filename) ?
-	Flight *getFirst();
-	Flight *getNext();
-	bool hasMore(); // bool is a type that can be true or false
+```
+class FlightManager {
+	public:
+	    bool initFromFile(const char *filename) ?
+	    Flight *getFirst();
+	    Flight *getNext();
+	    bool hasMore(); // bool is a type that can be true or false
+}
+```
 
-I see I need something that holds the information about one flight ... perhaps a class called Flight?
+### Hints
+- I see I need something that holds the information about one flight ... perhaps a class called Flight?
+- Maybe I need something that holds the information about all the bookings and each booking?
+- Maybe I need some reports?
 
 and so on ....
 
