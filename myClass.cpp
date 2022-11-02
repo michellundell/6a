@@ -10,6 +10,13 @@ class myClass {
             {
                 cout << "Hi my name is " << this->name << " and Im " << this->age << " old." << endl;
             }
+            void getInfo()
+            {
+                cout << "What is my name?" << endl;
+                cin >> name;
+                cout << "What is my age?" << endl;
+                cin >> age;
+            }
 
 };
 
@@ -17,10 +24,7 @@ int main(int argc,char **argv)
 {
         myClass me;
 
-        cout << "What is my name?" << endl;
-        cin >> me.name;
-        cout << "What is my age?" << endl;
-        cin >> me.age;
+        me.getInfo();
 
         me.showInfo();
 
