@@ -210,7 +210,33 @@ int main(int argc,char **argv)
 
 As you may have noted, the variables in the class was accessible outside the class, just like a struct.
 
-It is common practice to "hide" the variables in a class from access outside the class.
+It is common practice to "hide" the variables in a class from access outside the class. This is done by
+declaring them as **private**.
+
+Variables not declared in the **public** section of a class is by default **private**.
+
+So declaring variables like this
+```
+class myClassName {
+            char name[25];
+            int age;
+        public:
+            void showInfo() { cout << "Name:" << this->name << "," << this->age << " years" << endl;
+            }
+};
+```
+and in this way ...
+```
+class myClassName {
+	private:
+            char name[25];
+            int age;
+        public:
+            void showInfo() { cout << "Name:" << this->name << "," << this->age << " years" << endl;
+            }
+};
+```
+would be the same.
 
 ```
 #include <iostream>
