@@ -164,7 +164,7 @@ using namespace std;
 
 int main(int argc,char **argv)
 {
-        std::cout << "Give a number!" << std::endl;
+        cout << "Give a number!" << endl;
         int x = 0;
         cin >> x;
         cout << "Thank you, your number is " << x << endl;
