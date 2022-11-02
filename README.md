@@ -232,8 +232,7 @@ class myClassName {
             char name[25];
             int age;
         public:
-            void showInfo() { cout << "Name:" << this->name << "," << this->age << " years" << endl;
-            }
+            void showInfo() { cout << "Name:" << this->name << "," << this->age << " years" << endl; }
 };
 ```
 would be the same.
@@ -301,13 +300,16 @@ Think about how the data and functions could be grouped together, maybe as a cla
 I myself would probably think like this:
 
 hmm I need something that holds the information about the flights ... maybe a class called FlightManager?
-hmm I need something that holds the information about one flight ... maybe a class called Flight?
 
 Which methods should the FlightManager have ... hmm 
 	bool initFromFile(const char *filename) ?
 	Flight *getFirst();
 	Flight *getNext();
-	bool hasMore();
+	bool hasMore(); // bool is a type that can be true or false
 
-(bool is a type that can be set to true or false).
+I see I need something that holds the information about one flight ... perhaps a class called Flight?
+
+etc ...
+
+
 
