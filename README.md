@@ -128,12 +128,82 @@ This is a
 multiple line
 comment.
 */
+
 /* I can also be used on a single line */
 
 ```
 
 ## 5. C++ input/output
+
+In C++ it is common practice to use the operators >> and << for input and output.
+
+These operators can be overloaded for objects which leaves the output and input from and to streams up to the 
+implementation of the class object itself.
+
+### Output
+
+Use the << operator for output like this:
+
+```
+#include <iostream>
+using namespace std;
+
+int main(int argc,char **argv)
+{
+	cout << "My text is printed to standard output now!" << endl;
+        return 0;
+}
+```
+
+### Input
+```
+#include <iostream>
+using namespace std;
+
+int main(int argc,char **argv)
+{
+        std::cout << "Give a number!" << std::endl;
+        int x = 0;
+        cin >> x;
+        cout << "Thank you, your number is " << x << endl;
+        return 0;
+}
+```
+
 ## 6. C++ Class example
+```
+#include <iostream>
+using namespace std;
+
+class myClassName {
+        public:
+            char name[25];
+            int age;
+
+            void showInfo()
+            {
+                cout << "Hi my name is " << this->name << " and Im " << this->age << " old." << endl;
+            }
+
+};
+
+int main(int argc,char **argv)
+{
+        myClassName me;
+
+        cout << "What is my name?" << endl;
+        cin >> me.name;
+        cout << "What is my age?" << endl;
+        cin >> me.age;
+
+        me.showInfo();
+
+        return 0;
+}
+```
+**Note** the class is almost like a struct, except it has a keyword **public** and defines a function **showInfo()**inside it.
+
+
 ## 7. C++ Class Access
 ```
 ```
