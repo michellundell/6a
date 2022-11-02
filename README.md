@@ -335,15 +335,15 @@ fstream	        ios::in | ios::out
 #include <fstream>
 using namespace std;
 
-int main () {
-  ofstream myfile ("example.txt");
+int main (int argc, char **argv) 
+{
+  ofstream myfile("example.txt");
   if (myfile.is_open())
   {
     myfile << "This is a line.\n";
     myfile << "This is another line.\n";
     myfile.close();
-  }
-  else cout << "Unable to open file";
+  } else cerr << "Unable to open file" << endl;
   return 0;
 }
 ```
@@ -355,7 +355,8 @@ int main () {
 #include <string>
 using namespace std;
 
-int main () {
+int main (int argc, char **argv) 
+{
   string line;
   ifstream myfile ("example.txt");
   if (myfile.is_open())
@@ -365,9 +366,7 @@ int main () {
       cout << line << '\n';
     }
     myfile.close();
-  }
-
-  else cout << "Unable to open file"; 
+  } else cerr << "Unable to open file" << endl; 
 
   return 0;
 }
