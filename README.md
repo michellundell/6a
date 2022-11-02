@@ -46,6 +46,21 @@ int main(int argc,char **argv)
 	return 0;
 }
 ```
+1. To use the C++ input/output instead of C stdout and stdin, change the include from 
+```
+#include <stdio.h>
+```
+to
+
+```
+#include <iostream>
+```
+
+iostream.h is deprecated and not a standard header. It was used in older programs before C++ was standardized, Functions like cout were defined inside iostream.h. 
+
+After C++ got standardized, all these functions like cout got moved into the std namespace.To adjust to this change, non .h versions of some of these headers were introduced and declared as standard headers. This means that iostream is a standard header whose every function is in the std namespace.
+
+
 
 ## 3. C++ namespace
 ## 4. C++ input/output
