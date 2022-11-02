@@ -2,15 +2,15 @@
 using namespace std;
 
 class myClass {
-		string name;
+	    string name;
             int age;
         public:
 
-			void setInfo(string name, int age)
-			{
-				this->name = name;
-				this->age = age;
-			}
+            void setInfo(string name, int age)
+	    {
+	        this->name = name;
+		this->age = age;
+	    }
 
             void showInfo()
             {
