@@ -219,7 +219,7 @@ Variables not declared in the **public** section of a class is by default **priv
 
 So declaring variables like this
 ```
-class myClassName {
+class myClass {
             char name[25];
             int age;
         public:
@@ -229,7 +229,7 @@ class myClassName {
 ```
 and in this way ...
 ```
-class myClassName {
+class myClass {
 	private:
             char name[25];
             int age;
@@ -244,7 +244,7 @@ Below is an example of code that does not work ...
 #include <iostream>
 using namespace std;
 
-class myClassName {
+class myClass {
             char name[25];
             int age;
         public:
@@ -258,7 +258,7 @@ class myClassName {
 
 int main(int argc,char **argv)
 {
-        myClassName me;
+        myClass me;
 
         cout << "What is my name?" << endl;
         cin >> me.name;
@@ -275,13 +275,13 @@ Compiling this will generate the following errors (on my platform macOS)
 
 ```
 c++     example.cpp   -o example
-example.cpp:21:19: error: 'name' is a private member of 'myClassName'
+example.cpp:21:19: error: 'name' is a private member of 'myClass'
         cin >> me.name; 
                   ^
 example.cpp:5:11: note: implicitly declared private here
             char name[25];
                  ^
-example.cpp:23:19: error: 'age' is a private member of 'myClassName'
+example.cpp:23:19: error: 'age' is a private member of 'myClass'
         cin >> me.age; 
                   ^
 example.cpp:6:10: note: implicitly declared private here
@@ -294,6 +294,7 @@ make: *** [example] Error 1
 ## Todays assignment
 
 1. If the variables in the myClass is not public, how can they be set if they are only accessible from the class itself?
+   Find the solution, correct it and make a pull-request so I can run my program!
 
 2. If you are finished with the ticket program in C, start making a C++ version of it! (you could start by copying ticket.c to ticket.cpp).
 
