@@ -20,7 +20,22 @@
 5. Does the software allocate seats on the flight?
 6. Does the software print a ticket for each booking?
 
+After some C++ introduction, I want to review/help those out with troubles of
+the C version of the ticket system.
+
 ## 2. C++ bare-bone example
+
+### Minimal C++ program
+```
+int main(int argc,char **argv)
+{ 
+}
+```
+C is a subset of C++, any C program can be compiled with a C++ compiler.
+
+C++ is a superset of C. It requires a C++ compiler.
+
+
 ## 3. C++ namespace
 ## 4. C++ input/output
 ## 5. C++ Class example
