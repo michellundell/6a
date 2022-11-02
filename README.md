@@ -175,10 +175,51 @@ int main(int argc,char **argv)
 #include <iostream>
 using namespace std;
 
-class myClassName {
+class myClass {
         public:
             char name[25];
             int age;
+
+            void showInfo()
+            {
+                cout << "Hi my name is " << this->name << " and Im " << this->age << " old." << endl;
+            }
+
+};
+
+int main(int argc,char **argv)
+{
+        myClass me;
+
+        cout << "What is my name?" << endl;
+        cin >> me.name;
+        cout << "What is my age?" << endl;
+        cin >> me.age;
+
+        me.showInfo();
+
+        return 0;
+}
+```
+**Note** The class myClass is almost like a struct, except it has a keyword **public** and defines a function **showInfo()**inside it.
+
+**Note** The class myClass does not need to be named by a **typedef**, this is automatically.
+
+
+## 7. C++ Class Access
+
+As you may have noted, the variables in the class was accessible outside the class, just like a struct.
+
+It is common practice to "hide" the variables in a class from access outside the class.
+
+```
+#include <iostream>
+using namespace std;
+
+class myClassName {
+            char name[25];
+            int age;
+        public:
 
             void showInfo()
             {
@@ -201,9 +242,28 @@ int main(int argc,char **argv)
         return 0;
 }
 ```
-**Note** the class is almost like a struct, except it has a keyword **public** and defines a function **showInfo()**inside it.
 
+Compiling this will generate the following errors (on my platform macOS)
 
-## 7. C++ Class Access
 ```
+c++     example.cpp   -o example
+example.cpp:21:19: error: 'name' is a private member of 'myClassName'
+        cin >> me.name; 
+                  ^
+example.cpp:5:11: note: implicitly declared private here
+            char name[25];
+                 ^
+example.cpp:23:19: error: 'age' is a private member of 'myClassName'
+        cin >> me.age; 
+                  ^
+example.cpp:6:10: note: implicitly declared private here
+            int age;
+                ^
+2 errors generated.
+make: *** [example] Error 1
 ```
+
+## Todays assignment
+
+1 If the variables in the myClass is not public, how can they be set if they are only accessible from the class itself?
+2 If you are finished with the ticket program in C, start making a C++ version of it! (copy ticket.c to ticket.cpp).
