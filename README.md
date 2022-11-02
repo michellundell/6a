@@ -404,6 +404,25 @@ class FlightManager {
 - Maybe I need something that holds the information about all the bookings and each booking?
 - Maybe I need some reports?
 
-and so on ....
 
+### Another hint
+Read the following code and think about how it could be used in your C++ version of the ticket system.
 
+```
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+int main(int argc, char **argv)
+{
+        string line = "This is a, comma separated, text file, with some text and separators, in it";
+        stringstream ss(line);
+        string word;
+        while (!ss.eof()) {
+                getline(ss, word, ',');
+                cout << word << endl;
+        }
+        return 0;
+}
+```
