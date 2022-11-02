@@ -29,6 +29,7 @@ the C version of the ticket system.
 ```
 int main(int argc,char **argv)
 { 
+	return 0;
 }
 ```
 C is a subset of C++, any C program can be compiled with a C++ compiler.
