@@ -238,6 +238,7 @@ class myClassName {
 ```
 would be the same.
 
+Below is an example of code that does not work ...
 ```
 #include <iostream>
 using namespace std;
@@ -292,4 +293,21 @@ make: *** [example] Error 1
 ## Todays assignment
 
 1 If the variables in the myClass is not public, how can they be set if they are only accessible from the class itself?
-2 If you are finished with the ticket program in C, start making a C++ version of it! (copy ticket.c to ticket.cpp).
+
+2 If you are finished with the ticket program in C, start making a C++ version of it! (you could start by copying ticket.c to ticket.cpp).
+
+Think about how the data and functions could be grouped together, maybe as a class?
+
+I myself would probably think like this:
+
+hmm I need something that holds the information about the flights ... maybe a class called FlightManager?
+hmm I need something that holds the information about one flight ... maybe a class called Flight?
+
+Which methods should the FlightManager have ... hmm 
+	bool initFromFile(const char *filename) ?
+	Flight *getFirst();
+	Flight *getNext();
+	bool hasMore();
+
+(bool is a type that can be set to true or false).
+
