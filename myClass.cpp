@@ -9,14 +9,14 @@ class myClass
     int age;
 
 public:
-    void getInfo()
+    void setName(string name)
     {
-        cout << "What is your name? ";
-        getline(cin, this->name);
-        cout << "What is your age? ";
-        cin >> this->age;
+        this->name = name;
     }
-    
+    void setAge(int age)
+    {
+        this->age = age;
+    }
     void showInfo()
     {
         cout << "Hi, my name is " << this->name << " and I'm " << this->age << " years old." << endl;
@@ -25,9 +25,18 @@ public:
 
 int main(int argc, char **argv)
 {
+    string name;
+    int age;
+    
     myClass me;
 
-    me.getInfo();
+    cout << "What is your name? ";
+    getline(cin, name);
+    me.setName(name);
+
+    cout << "What is your age? ";
+    cin >> age;
+    me.setAge(age);
 
     me.showInfo();
 
