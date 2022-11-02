@@ -36,6 +36,16 @@ C is a subset of C++, any C program can be compiled with a C++ compiler.
 
 C++ is a superset of C. It requires a C++ compiler.
 
+### Hello in C++
+```
+#include <iostream>
+
+int main(int argc,char **argv)
+{ 
+	std::cout << "Hello!" << std::endl;
+	return 0;
+}
+```
 
 ## 3. C++ namespace
 ## 4. C++ input/output
