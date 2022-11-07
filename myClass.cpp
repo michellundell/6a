@@ -1,10 +1,21 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 class myClass {
             char name[25];
             int age;
         public:
+
+            void setName(char name[25])
+            {
+                strncpy(this->name, name, 25);
+            }
+
+            void setAge(int age)
+            {
+                this->age = age;
+            }
 
             void showInfo()
             {
@@ -16,11 +27,15 @@ class myClass {
 int main(int argc,char **argv)
 {
         myClass me;
+        char name[25];
+        int age;
 
         cout << "What is my name?" << endl;
-        cin >> me.name;
+        cin >> name;
+        me.setName(name);
         cout << "What is my age?" << endl;
-        cin >> me.age;
+        cin >> age;
+        me.setAge(age);
 
         me.showInfo();
 
