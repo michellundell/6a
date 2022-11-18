@@ -46,7 +46,8 @@ Usage
 	./getopt -f {flight information filename} -b {booking information filename} -r {report filename}
 */
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) 
+{
    int option;
    int debug = 0;
    char flight_filename[255];
